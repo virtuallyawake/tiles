@@ -15,7 +15,7 @@
         <canvas id="myChart" width="100" height="100"></canvas>
     </body>
     <script type="text/javascript">
-        (function () {
+        window.onload = function () {
           //Get the context of the canvas element we want to select
           var ctx = document.getElementById("myChart").getContext("2d");
           //console.log(ctx);
@@ -52,7 +52,7 @@
             pointDotRadius : 2,
           };
           new Chart(ctx).Line(data,options);
-          })();
+          };
         
         
   	</script>
