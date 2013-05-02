@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <script src="Chart.min.js"></script>
+        <style type="text/css">
+            canvas {background-color:#ffffff;}
+            body {
+                background-color:#00ff00;
+                margin: 0;
+                padding: 0
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="myChart" width="125" height="125"></canvas>
+    </body>
+    <script type="text/javascript">
+        (function () {
+          //Get the context of the canvas element we want to select
+          var ctx = document.getElementById("myChart").getContext("2d");
+          //console.log(ctx);
+          var data = {
+          labels : ["Jan","Feb","Mar","Apr","May","Jun","Jul"],
+          datasets : [
+                      {
+                      fillColor : "rgba(160,220,220,0.5)",
+                      strokeColor : "rgba(160,220,220,1)",
+                      pointColor : "rgba(160,220,220,1)",
+                      pointStrokeColor : "#fff",
+                      data : [65,59,90,11,56,55,0]
+                      },
+                      {
+                      fillColor : "rgba(101,187,205,0.5)",
+                      strokeColor : "rgba(101,187,205,1)",
+                      pointColor : "rgba(101,187,205,1)",
+                      pointStrokeColor : "#fff",
+                      data : [28,48,40,99,96,87,10]
+                      }
+                      ]
+          };
+          
+          var options = {
+            //Number - Scale label font size in pixels
+            scaleFontSize : 7,
+            //Boolean - Whether to animate the chart
+            animation : false,
+            //Number - Pixel width of dataset stroke
+            datasetStrokeWidth : 1,
+            //Number - Pixel width of point dot stroke
+            pointDotStrokeWidth : 0.5,
+            //Number - Radius of each point dot in pixels
+            pointDotRadius : 2,
+          };
+          new Chart(ctx).Line(data,options);
+          })();
+        
+        
+  	</script>
+</html>
